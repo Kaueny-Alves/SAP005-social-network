@@ -1,3 +1,5 @@
+// import { getPosts } from '../../services/index.js';
+
 export const Feed = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
@@ -11,6 +13,13 @@ export const Feed = () => {
      </section>
   </div>
       `;
+
+  // const submit = rootElement.querySelector('#btn-post');
+
+  // submit.addEventListener('load', () => {
+  //   const getPost = rootElement.querySelector('#postsAll');
+  //   getPosts(getPost);
+  // });
 
   return rootElement;
 };
