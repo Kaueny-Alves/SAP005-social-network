@@ -18,8 +18,6 @@ export const Register = () => {
       <div class="half-box">
         <label for="lastname"> Sobrenome</label>
         <input type="lastname" name="lastname" id="lastname" placeholder="Digite seu sobrenome">
-      </div>
-
       <div class="half-box spacing">
       <label for="talents"> Qual seu talento? </label>
       <input type="Talents" name="talents" id="talents" placeholder= " Digite seu talento" >
@@ -37,7 +35,6 @@ export const Register = () => {
         <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso.</a> </label>
       </div>   
       <div class="full-box">
-
         <input type="submit" id="btn-submit" value="Cadastrar">
       </div> 
     </form>
