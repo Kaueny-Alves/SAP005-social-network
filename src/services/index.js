@@ -1,20 +1,29 @@
 export const createUser = (email, password, name, lastName, talents = 'cantar') => {
-    firebase
-        .auth()
-        .createUserWithEmailAndPassword(email, password)
-        .then(() => {
-            firebase
-                .firestore()
-                .collection('Usuarios')
-                .doc()
-                .set({ name, lastName, talents });
-            console.log('usuário criado com sucesso');
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log('deu ruim', errorMessage, errorCode);
-        });
+
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(() => {
+      firebase
+        .firestore()
+        .collection('Usuarios')
+        .doc()
+        .set({ name, lastName, talents });
+      console.log('usuário criado com sucesso');
+      alert('Usuário cadastrado com sucesso');
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log('deu ruim', errorMessage, errorCode);
+      if (errorCode === 'auth/email-already-in-use') {
+        return alert('Email e-mail já cadastrado');
+      }
+      if (errorCode === 'auth/weak-password') {
+        return alert('A senha deve ter no minimo 6 caracteres');
+      }
+      return `Codigo de error: ${errorCode}`;
+    });
 };
 
 export const userLogin = (email, password) => {

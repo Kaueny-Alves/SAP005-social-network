@@ -29,11 +29,7 @@ export const Register = () => {
       <div class="half-box">
         <label for="passconfirmation"> Confirme sua senha</label>
         <input type="password" name="passconfirmation" id="passconfirmation" placeholder="Confirme sua senha">  
-      </div>  
-      <div class="full-box">
-        <input type="checkbox" name="agreement" id="agreement">
-        <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso.</a> </label>
-      </div>   
+      </div>    
       <div class="full-box">
         <input type="submit" id="btn-submit" value="Cadastrar">
       </div> 
@@ -75,13 +71,6 @@ export const Register = () => {
     const name = rootElement.querySelector('#name').value;
     const lastName = rootElement.querySelector('#lastname').value;
 
-      /*if  '#email' = emailTextField.text, password = passwordTextField.text{
-        Auth.auth().createUser(withEmail: email, password: password, completion:{ user, error in
-           if let firebaseError = error{
-                print(firebaseError.localizedDescription)
-                return
-            }
-          print("Usuário cadastrado")
 
           /* if (errorCode === 'auth/wrong-password' || errorCode === 'auth/invalid-email') {
         return alert('Email ou Senha incorreta!');
