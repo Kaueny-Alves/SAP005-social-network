@@ -75,13 +75,6 @@ export const Register = () => {
     const name = rootElement.querySelector('#name').value;
     const lastName = rootElement.querySelector('#lastname').value;
 
-      /*if  '#email' = emailTextField.text, password = passwordTextField.text{
-        Auth.auth().createUser(withEmail: email, password: password, completion:{ user, error in
-           if let firebaseError = error{
-                print(firebaseError.localizedDescription)
-                return
-            }
-          print("Usuário cadastrado")
 
           /* if (errorCode === 'auth/wrong-password' || errorCode === 'auth/invalid-email') {
         return alert('Email ou Senha incorreta!');
