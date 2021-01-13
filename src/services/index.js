@@ -92,16 +92,21 @@ export const createPost = (post) => {
     });
 };
 
-export const getPosts = () => {
-  const dbPosts = firebase.firestore().collection('Posts').get();
+// export const getPosts = () => firebase.firestore()
+//   .collection('Posts')
+//   .get()
+//   .then((snapshot) => snapshot.forEach((doc) => (doc.data())));
 
-  dbPosts.then((snapshot) => {
-    snapshot.forEach((doc) => {
-      console.log(doc.data());
-      return doc.data();
-    });
-  });
-};
+export const getPosts = () => (
+  firebase
+    .firestore()
+    .collection('Posts')
+    .get()
+    .then((result) => result.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    })))
+);
 
 export const getUsers = () => {
   const dbUsers = firebase.firestore().collection('Usuarios').get();
