@@ -93,13 +93,23 @@ export const createPost = (post) => {
 };
 
 export const getPosts = () => {
-  const db = firebase.firestore();
-  db.collection('Posts').get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      const user = doc.data().uid;
-      const post = doc.data().post;
-      const postId = doc.id;
-      console.log(`${postId} => ${user}, ${post}`);
+  const dbPosts = firebase.firestore().collection('Posts').get();
+
+  dbPosts.then((snapshot) => {
+    snapshot.forEach((doc) => {
+      console.log(doc.data());
+      return doc.data();
+    });
+  });
+};
+
+export const getUsers = () => {
+  const dbUsers = firebase.firestore().collection('Usuarios').get();
+
+  dbUsers.then((snapshot) => {
+    snapshot.forEach((doc) => {
+      console.log(doc.data());
+      return doc.data();
     });
   });
 };

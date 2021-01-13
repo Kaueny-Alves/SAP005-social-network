@@ -1,4 +1,4 @@
-// import { getPosts } from '../../services/index.js';
+import { createPost, getPosts, getUsers } from '../../services/index.js';
 
 export const Feed = () => {
   const rootElement = document.createElement('div');
@@ -14,17 +14,23 @@ export const Feed = () => {
          </form>
     <div class="container-posts">
       <h1>Feed</h1>
+      <button id="btnTeste">teste</button>
     </div>
     
   </div>
     `;
 
-  // ----  posts na tela
+  const submit = rootElement.querySelector('#btn-post');
 
-  const timeline = rootElement.querySelector('.container-posts');
-  const postsLoop = Array.from(Array(1).keys());
-  postsLoop.forEach(() => {
-    timeline.innerHTML += `
+  submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    const post = rootElement.querySelector('#post').value;
+    createPost(post);
+  });
+
+  const carregaPosts = () => {
+    const template = rootElement.querySelector('.container-posts');
+    template.innerHTML += `
     <div class = "post">
     <h4> Kau </h4>
     <section>
@@ -35,18 +41,12 @@ export const Feed = () => {
     <button class = "editar"> Editar </button>
   </div>
       `;
-  });
+    getPosts(template);
+    getUsers();
+  };
 
-  // HTML <h1>Posts</h1>
-  // <button id ="posts"> postar </button>
-  // <div id = "allPosts"> </div>
-
-  // ----  get posts no console
-  // const cardPost = rootElement.querySelector('#posts');
-  // cardPost.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   getPosts();
-  // });
+  const btnTeste = rootElement.querySelector('#btnTeste');
+  btnTeste.addEventListener('click', carregaPosts);
 
   return rootElement;
 };

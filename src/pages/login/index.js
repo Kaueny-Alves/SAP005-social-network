@@ -21,9 +21,6 @@ export const Login = () => {
       <div class="full-box">
         <input  type="submit" id="btn-submit-gmail" value="Login Gmail">
       </div> 
-      <div class="full-box">
-        <input type="submit" id="btn-submit-logout" value="Logout">
-      </div> 
     </form>
 
     <label for="agreement" id="agreement-label">Não está cadastrado? <a id="registerUser">Registre-se.</a> </label>
@@ -45,13 +42,6 @@ export const Login = () => {
     e.preventDefault();
     gmailLogin();
     // onNavigate("/feed");
-  });
-
-  const logoutUser = rootElement.querySelector('#btn-submit-logout');
-  logoutUser.addEventListener('click', (e) => {
-    e.preventDefault();
-    userLogout();
-    // onNavigate("/");
   });
 
   const registerUser = rootElement.querySelector('#registerUser');
