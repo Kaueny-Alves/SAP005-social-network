@@ -7,12 +7,12 @@ export const Perfil = () => {
   <h1>Fale mais sobre você</h1>
   <form id="registrer-form">
    <div class="full-box">
-     <label for="text"> Juliana </label>
+     <label for="text"> Kau </label>
      <input type="text" name="post" id="post" placeholder="Eu sou cantora há 12 anos...">
    </div>
    <div class="full-box">
      <input type="submit" id="btn-post" value="Publicar">
-   </div> 
+   </div>
   </form>
   </div>
       `;

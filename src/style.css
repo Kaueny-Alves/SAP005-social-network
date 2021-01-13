@@ -129,6 +129,8 @@ input[type="submit"]{
     width: 200px;
     height: 200px;
 }
+
+
 nav{
     display: flex;
     flex-wrap: wrap;
@@ -168,4 +170,23 @@ header{
     background-color: rgb(248, 247, 248);
     border-radius: 20px;
     border:1px solid  rgb(214, 43, 123);
+}
+
+/* CSS FEED */
+
+.post {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding:20px;
+    margin-bottom: 20px;
+}
+
+.post h3 {
+    margin-top:0;
+}
+
+.post img {
+    width: 100%;
 }
