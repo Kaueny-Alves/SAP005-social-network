@@ -20,33 +20,35 @@ export const Feed = () => {
   </div>
     `;
 
+  const carregaPosts = (posts) => {
+    const usuario = firebase.auth().currentUser;
+    const template = rootElement.querySelector('.container-posts');
+    posts.map((post) => {
+      template.innerHTML += `
+      <div class = "post">
+      <h4> ${usuario.displayName} </h4>
+      <section>
+      <textarea class = "">${post.post} </textarea>
+      </section>
+      <button class = "like"> Curtir </button>
+      <button class = "deletar"> Deletar </button>
+      <button class = "editar"> Editar </button>
+    </div>
+        `;
+    });
+  };
+
   const submit = rootElement.querySelector('#btn-post');
 
   submit.addEventListener('click', (e) => {
     e.preventDefault();
     const post = rootElement.querySelector('#post').value;
     createPost(post);
+    getPosts().then((posts) => {
+      console.log(posts);
+      carregaPosts(posts);
+    });
   });
-
-  const carregaPosts = () => {
-    const template = rootElement.querySelector('.container-posts');
-    template.innerHTML += `
-    <div class = "post">
-    <h4> Kau </h4>
-    <section>
-    <textarea class = ""> </textarea>
-    </section>
-    <button class = "like"> Curtir </button>
-    <button class = "deletar"> Deletar </button>
-    <button class = "editar"> Editar </button>
-  </div>
-      `;
-    getPosts(template);
-    getUsers();
-  };
-
-  const btnTeste = rootElement.querySelector('#btnTeste');
-  btnTeste.addEventListener('click', carregaPosts);
 
   return rootElement;
 };
