@@ -190,3 +190,12 @@ header{
 .post img {
     width: 100%;
 }
+
+.postTemplate{
+    max-width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding:10px;
+    margin: 10px;
+
+}

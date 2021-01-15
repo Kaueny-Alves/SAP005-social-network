@@ -43,10 +43,6 @@ Vendo esse problema, nós fizemos o que ???
 
 CRIAMOS UM ESPAÇO PRA SUPRIR ESTA NECESSIDADE !!
 
-![massa](https://media1.tenor.com/images/f6dc5958255d81255811e3a758436fc8/tenor.gif?itemid=3793093)
-
-
-
 
 ## 4. A Interface do Projeto
 
