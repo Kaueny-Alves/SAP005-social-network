@@ -4,17 +4,16 @@ export const Feed = () => {
     const rootElement = document.createElement('div');
     rootElement.innerHTML = `
   <div id="main-container">
-    <h1> Artista</h1>
+    <h2> Artista</h2>
     <form id="registrer-form">
             <div class="full-box">
-             <label for="text"> Kau </label>
-             <input type="text" name="post" id="post" placeholder="Conte um pouco sobre você...">
+             <label for="text"> Olá! </label>
+             <input type="text" name="post" id="post" placeholder="O que podemos mudar com arte hoje?">
             </div>
             <input type="submit" id="btn-post" value="Publicar">
          </form>
     <div class="container-posts">
-      <h1>Feed</h1>
-      <button id="btnTeste">teste</button>
+      <h2>Publicações</h2>
     </div>
     
   </div>
@@ -23,7 +22,6 @@ export const Feed = () => {
     const carregaPosts = (posts) => {
         const usuario = firebase.auth().currentUser;
         const template = rootElement.querySelector('.container-posts');
-        console.log(posts)
         posts.map((post) => {
             template.innerHTML += `
       <div class = "post">
@@ -36,8 +34,14 @@ export const Feed = () => {
       <button class = "editar"> Deletar </button>
     </div>
         `;
+            const like = rootElement.getElementsByClassName('like')
+            like[0].addEventListener('click', (event) => {
+
+
+            })
         });
     };
+
 
     const submit = rootElement.querySelector('#btn-post');
 
