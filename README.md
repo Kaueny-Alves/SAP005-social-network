@@ -36,9 +36,11 @@ As personas listadas abaixo e necessidades do usuário foram posteriormente vali
 Pessoas artistas pretas que sentem a necessidade de uma plataforma própria para interagir entre si, se descobrirem e se conectarem. Sejam eles na área da música, da dança, pintura, escultura, teatro, literatura, cinema ou performance.
 
 Vendo essa necessidade, nós fizemos o que ???
+
+
 CRIAMOS UM ESPAÇO PRA SUPRIR ESTA NECESSIDADE !!
 
-![uhul](https://i.pinimg.com/originals/b9/cf/c8/b9cfc8fd906285a70340351429afc320.gif)
+![massa](https://media1.tenor.com/images/f6dc5958255d81255811e3a758436fc8/tenor.gif?itemid=3793093)
 
 ## 4. A Interface do Projeto
 
