@@ -37,12 +37,16 @@ As personas listadas abaixo e necessidades do usuário foram posteriormente vali
 
 Pessoas artistas pretas que sentem a necessidade de uma plataforma própria para interagir entre si, se descobrirem e se conectarem. Sejam eles na área da música, da dança, pintura, escultura, teatro, literatura, cinema ou performance.
 
+
 Vendo esse problema, nós fizemos o que ???
 
 
 CRIAMOS UM ESPAÇO PRA SUPRIR ESTA NECESSIDADE !!
 
 ![massa](https://media1.tenor.com/images/f6dc5958255d81255811e3a758436fc8/tenor.gif?itemid=3793093)
+
+
+
 
 ## 4. A Interface do Projeto
 
@@ -65,7 +69,7 @@ Nesta tela, a usuária poderá efetuar um cadastro simples, basta inserir um ema
 
 ![feed](feed2.jpeg)
 
-Após efetuar o login, a artista terá acesso a tela de feed, na qual ela poderá criar as suas postagens, curtir outras publicações, editar o próprio post e também excluir somente as suas publicações. (Procurar por outras pessoas por localidade (??))
+Após efetuar o login, a artista terá acesso a tela de feed, na qual ela poderá criar as suas postagens, curtir outras publicações, editar o próprio post e também excluir somente as suas publicações. 
 
 ![feed2](feed1.jpeg)
 
