@@ -62,9 +62,7 @@ export const Feed = () => {
           <textAraea class="postEdit"></textAraea>
           <button class="btnEdit"></button>
           `;
-          // const doc = post.id;
-          // firebase.firestore().collection('Posts').doc(doc);
-          console.log('botão vc esta funcionando?', textArea);
+          console.log('botão vc esta funcionando? será');
         });
       });
     });
@@ -76,7 +74,7 @@ export const Feed = () => {
     const post = rootElement.querySelector('#post').value;
     createPost(post);
     getPosts().then((posts) => {
-      console.log(posts);
+     
       carregaPosts(posts);
     });
   });
