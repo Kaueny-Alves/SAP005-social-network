@@ -37,10 +37,11 @@ As personas listadas abaixo e necessidades do usuário foram posteriormente vali
 
 Pessoas artistas pretas que sentem a necessidade de uma plataforma própria para interagir entre si, se descobrirem e se conectarem. Sejam eles na área da música, da dança, pintura, escultura, teatro, literatura, cinema ou performance.
 
-Vendo essa necessidade, nós fizemos o que ???
+
+Vendo esse problema, nós fizemos o que ???
+
 
 CRIAMOS UM ESPAÇO PRA SUPRIR ESTA NECESSIDADE !!
-
 
 
 ## 4. A Interface do Projeto
