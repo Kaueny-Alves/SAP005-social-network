@@ -35,6 +35,7 @@ export const Register = () => {
   </div>
     `;
 
+
   const submit = rootElement.querySelector('#btn-submit');
 
   submit.addEventListener('click', (e) => {

@@ -98,6 +98,7 @@ export const createPost = (post) => {
     });
 };
 
+
 export const getPosts = () => (
   firebase
     .firestore()
