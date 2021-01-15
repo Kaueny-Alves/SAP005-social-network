@@ -14,6 +14,8 @@
 
 Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. As redes sociais invadiram nossas vidas.
 
+
+
 ![redes](redes.jpeg)
 
  Nós as amamos ou odiamos e muitas pessoas não conseguem viver sem elas.

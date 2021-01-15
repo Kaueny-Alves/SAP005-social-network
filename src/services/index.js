@@ -92,6 +92,7 @@ export const createPost = (post) => {
     });
 };
 
+
 // export const getPosts = () => firebase.firestore()
 //   .collection('Posts')
 //   .get()
