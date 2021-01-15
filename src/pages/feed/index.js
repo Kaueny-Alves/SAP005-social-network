@@ -1,8 +1,10 @@
-import { createPost, getPosts, getUsers } from '../../services/index.js';
+import {
+  createPost, deletePost, getPosts,
+} from '../../services/index.js';
 
 export const Feed = () => {
-    const rootElement = document.createElement('div');
-    rootElement.innerHTML = `
+  const rootElement = document.createElement('div');
+  rootElement.innerHTML = `
   <div id="main-container">
     <h2> Artista</h2>
     <form id="registrer-form">
@@ -19,41 +21,65 @@ export const Feed = () => {
   </div>
     `;
 
-    const carregaPosts = (posts) => {
-        const usuario = firebase.auth().currentUser;
-        const template = rootElement.querySelector('.container-posts');
-        posts.map((post) => {
-            template.innerHTML += `
+  const carregaPosts = (posts) => {
+    const template = rootElement.querySelector('.container-posts');
+    posts.forEach((post) => {
+      template.innerHTML += `
       <div class = "post">
       <h4> ${post.user} </h4>
       <section>
-      <textarea class = "">${post.post} </textarea>
+      <div class = "postTemplate">${post.post} </div>
       </section>
       <button class = "like"> Curtir </button>
-      <button class = "deletar"> Editar </button>
-      <button class = "editar"> Deletar </button>
+      <button class='delete' > delete </button>
+      <button class = "editar"> Editar </button>
     </div>
         `;
-            const like = rootElement.getElementsByClassName('like')
-            like[0].addEventListener('click', (event) => {
-
-
+      const btnDelete = template.querySelectorAll('.delete');
+      btnDelete.forEach((buttonD) => {
+        buttonD.addEventListener('click', () => {
+          window.confirm('Deseja excluir este post');
+          const doc = post.id;
+          firebase.firestore().collection('Posts').doc(doc).delete()
+            .then(() => {
+              console.log('Document successfully deleted!');
+              getPosts();
             })
+            .catch((error) => {
+              console.error('Error removing document: ', error);
+            });
         });
-    };
+      });
 
 
-    const submit = rootElement.querySelector('#btn-post');
-
-    submit.addEventListener('click', (e) => {
-        e.preventDefault();
-        const post = rootElement.querySelector('#post').value;
-        createPost(post);
-        getPosts().then((posts) => {
-            console.log(posts);
-            carregaPosts(posts);
+      const textArea = template.querySelectorAll('.postTemplate');
+      const text = textArea.value;
+    
+      const btnEditar = template.querySelectorAll('.editar');
+      btnEditar.forEach((buttonE) => {
+        buttonE.addEventListener('click', () => {
+          textArea.innerHTML = `
+          <textAraea class="postEdit"></textAraea>
+          <button class="btnEdit"></button>
+          `;
+          // const doc = post.id;
+          // firebase.firestore().collection('Posts').doc(doc);
+          console.log('botão vc esta funcionando?', textArea);
         });
+      });
     });
+  };
 
-    return rootElement;
+  const submit = rootElement.querySelector('#btn-post');
+  submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    const post = rootElement.querySelector('#post').value;
+    createPost(post);
+    getPosts().then((posts) => {
+      console.log(posts);
+      carregaPosts(posts);
+    });
+  });
+
+  return rootElement;
 };
