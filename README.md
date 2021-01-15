@@ -14,6 +14,8 @@
 
 Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. As redes sociais invadiram nossas vidas.
 
+
+
 ![redes](redes.jpeg)
 
  Nós as amamos ou odiamos e muitas pessoas não conseguem viver sem elas.
@@ -35,7 +37,7 @@ As personas listadas abaixo e necessidades do usuário foram posteriormente vali
 
 Pessoas artistas pretas que sentem a necessidade de uma plataforma própria para interagir entre si, se descobrirem e se conectarem. Sejam eles na área da música, da dança, pintura, escultura, teatro, literatura, cinema ou performance.
 
-Vendo essa necessidade, nós fizemos o que ???
+Vendo esse problema, nós fizemos o que ???
 
 
 CRIAMOS UM ESPAÇO PRA SUPRIR ESTA NECESSIDADE !!

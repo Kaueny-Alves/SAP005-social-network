@@ -40,26 +40,23 @@ export const Register = () => {
     `;
 
 
- /* class Validator{
 
+ /* class Validator{
     constructor(){
       this.validations = [
         'data-min-length',
       ]
     }
     validate(form){ //iniciar validação em todos os campos
-
       let inputs =form.getElementsByTagName('input');
-
       let inputsArray = [...inputs];
       
-
     }
     
     
   }  
-
   const form = rootElement.querySelector('#register-form');*/
+
   const submit = rootElement.querySelector('#btn-submit');
 
   submit.addEventListener('click', (e) => {
@@ -70,6 +67,7 @@ export const Register = () => {
     const password = rootElement.querySelector('#password').value;
     const name = rootElement.querySelector('#name').value;
     const lastName = rootElement.querySelector('#lastname').value;
+
 
 
           /* if (errorCode === 'auth/wrong-password' || errorCode === 'auth/invalid-email') {
