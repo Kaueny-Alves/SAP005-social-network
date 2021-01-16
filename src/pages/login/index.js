@@ -1,4 +1,4 @@
-import { userLogin, userLogout, gmailLogin } from '../../services/index.js';
+import { userLogin, gmailLogin } from '../../services/index.js';
 import { onNavigate } from '../../utils/history.js';
 
 export const Login = () => {
@@ -34,14 +34,12 @@ export const Login = () => {
     const email = rootElement.querySelector('#email').value;
     const password = rootElement.querySelector('#password').value;
     userLogin(email, password);
-    // onNavigate("/feed")
   });
 
   const gmail = rootElement.querySelector('#btn-submit-gmail');
   gmail.addEventListener('click', (e) => {
     e.preventDefault();
     gmailLogin();
-    // onNavigate("/feed");
   });
 
   const registerUser = rootElement.querySelector('#registerUser');
