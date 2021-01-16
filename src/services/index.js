@@ -1,18 +1,19 @@
+import { onNavigate } from '../utils/history.js';
+
 export const createUser = (email, password, name, lastName, talents = 'cantar') => {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((cred) => {
       const user = firebase.auth.currentUser;
-      const uidUser = user.uid;
-      cred.user.updateProfile({ displayName: `${name} ${lastName}` });
+      cred.user.updateProfile({ displayName: `${name}${' '}${lastName} ` });
       firebase
         .firestore()
         .collection('Usuarios')
-        .doc(uidUser)
+        .doc(user)
         .set({ name, lastName, talents });
-      console.log('usuário criado com sucesso');
       alert('Usuário cadastrado com sucesso');
+      onNavigate('/login');
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -24,6 +25,7 @@ export const createUser = (email, password, name, lastName, talents = 'cantar') 
       if (errorCode === 'auth/weak-password') {
         return alert('A senha deve ter no minimo 6 caracteres');
       }
+
       return `Codigo de error: ${errorCode}`;
     });
 };
@@ -32,11 +34,9 @@ export const userLogin = (email, password) => {
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
-    .then((result) => {
-      const token = result.user.uid;
-      const user = result.user;
-      console.log(user, token, 'usuário Logado com sucesso');
-      return (token, user);
+    .then(() => {
+      window.alert('usuário Logado com sucesso');
+      onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -45,6 +45,7 @@ export const userLogin = (email, password) => {
       if (errorCode === 'auth/wrong-password' || errorCode === 'auth/invalid-email') {
         return alert('Email ou Senha incorreta!');
       }
+
       return `Codigo de error: ${errorCode}`;
     });
 };
@@ -79,26 +80,6 @@ export const userLogout = () => {
     });
 };
 
-export const createPost = (post) => {
-  const db = firebase.firestore();
-  db.collection('Posts')
-    .add({
-      uidPost: firebase.auth().currentUser.uid,
-      user: firebase.auth().currentUser.displayName,
-      post,
-      likes: [],
-      comments: [],
-    }).then(
-      console.log('post criado com sucesso'),
-    )
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log('deu ruim, post não foi criado.', errorMessage, errorCode);
-    });
-};
-
-
 export const getPosts = () => (
   firebase
     .firestore()
@@ -121,8 +102,32 @@ export const getUsers = () => {
   });
 };
 
-export const deletePost = () => {
+export const createPost = (post) => {
+  const db = firebase.firestore();
+  db.collection('Posts')
+    .add({
+      uidPost: firebase.auth().currentUser.uid,
+      user: firebase.auth().currentUser.displayName,
+      post,
+      likes: [],
+      comments: [],
+    }).then(
+      console.log('post criado com sucesso'),
 
-  const postDelete = firebase.firestore().collection('Post').doc(id);
-  return postDelete.delete();
+    )
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log('deu ruim, post não foi criado.', errorMessage, errorCode);
+    });
+};
+
+export const deletePost = (doc) => {
+  firebase.firestore().collection('Posts').doc(doc).delete()
+    .then(() => {
+      console.log('Document successfully deleted!');
+    })
+    .catch((error) => {
+      console.error('Error removing document: ', error);
+    });
 };

@@ -1,7 +1,6 @@
 import { createUser } from '../../services/index.js';
 
 export const Register = () => {
-  // Coloque sua página
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
     <div id="main-container">
@@ -30,11 +29,8 @@ export const Register = () => {
         <input type="submit" id="btn-submit" value="Cadastrar">
       </div> 
     </form>
-  
-  
   </div>
     `;
-
 
   const submit = rootElement.querySelector('#btn-submit');
 
@@ -45,8 +41,9 @@ export const Register = () => {
     const password = rootElement.querySelector('#password').value;
     const name = rootElement.querySelector('#name').value;
     const lastName = rootElement.querySelector('#lastname').value;
+    const talents = rootElement.querySelector('#talents').value;
 
-    createUser(email, password, name, lastName);
+    createUser(email, password, name, lastName, talents);
   });
 
   return rootElement;
